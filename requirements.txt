@@ -1,0 +1,4 @@
+akshare==1.10.30
+baostock==0.8.8
+fastapi==0.97.0
+pandas==2.0.2
