@@ -1,4 +1,6 @@
 akshare==1.10.30
 baostock==0.8.8
-fastapi==0.97.0
+fastapi==0.98.0
 pandas==2.0.2
+pydantic==1.10.9
+tushare==1.2.89
