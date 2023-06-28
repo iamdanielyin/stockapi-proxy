@@ -182,7 +182,7 @@ async def kdata(code: str, freq: str, start: str = datetime.datetime.now().strft
             match freq:
                 case 'd':
                     fields = 'date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,tradestatus,pctChg,peTTM,pbMRQ,psTTM,pcfNcfTTM,isST'
-                case 'w', 'm':
+                case 'w' | 'm':
                     fields = 'date,code,open,high,low,close,volume,amount,adjustflag,turn,pctChg'
                 case _:
                     fields = 'date,time,code,open,high,low,close,volume,amount,adjustflag'
