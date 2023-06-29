@@ -26,7 +26,7 @@ async def baostock_proxy(method: str = Path(title="Baostock API"), args: Union[D
         if lg is None:
             return {"code": -1, "msg": '登录失败'}
         if lg.error_code != '0':
-            return {"code": lg.error_code, "msg": lg.error_msg}
+            return {"code": int(lg.error_code), "msg": lg.error_msg}
         rs_list = []
         method = getattr(baostock_lib, method)
         result = method(**args)
@@ -34,7 +34,7 @@ async def baostock_proxy(method: str = Path(title="Baostock API"), args: Union[D
             return {"code": -1, "msg": '参数异常'}
 
         if result.error_code != '0':
-            return {"code": result.error_code, "msg": result.error_msg}
+            return {"code": int(result.error_code), "msg": result.error_msg}
 
         while result.next():
             rs_list.append(result.get_row_data())
